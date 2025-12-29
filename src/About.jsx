@@ -14,7 +14,7 @@ export default function About() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: false, amount: 0.5 }}
           transition={{ duration: 1.5 }}
-          class="flex flex-auto  justify-center  text-[2rem] md:min-h-screen md:items-center md:py-[25%]"
+          class="flex flex-auto justify-center text-[2rem] md:min-h-screen md:items-center md:py-[25%]"
         >
           Hi! I’m Mackenzie (but you can call me Mack). I create software that
           helps people do their best work.
@@ -59,8 +59,8 @@ export default function About() {
       </div>
       <motion.div
         class="flex items-center md:sticky md:top-0 justify-center order-1 md:h-screen w-full md:w-full md:order-2"
-        animate={{ rotate: [0, 10, -5, 0] }}
-        transition={{ duration: 1 }}
+        animate={{ rotate: [0, 10, -5, 2, 0] }}
+        transition={{ duration: 2 }}
       >
         <img
           class="min-h-[200px] min-w-[200px]"
