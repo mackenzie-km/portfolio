@@ -1,22 +1,30 @@
-import reactLogo from "./assets/react.svg";
-import "./App.css";
-import About from "./About.jsx";
-import Cooking from "./Cooking.jsx";
+// App.jsx
+import { NavLink, Outlet } from "react-router-dom";
 
-function App() {
+export default function App() {
   return (
     <>
-      {/* <About /> */}
-      <Cooking />
-      <div id="projects">
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1 class="text-3xl font-bold underline">Vite + React</h1>
-      <p className="contact">Click on the Vite and React logos to learn more</p>
+      <header>
+        <nav>
+          <NavLink to="/" end>
+            Home
+          </NavLink>
+          <NavLink to="/coding">Coding</NavLink>
+          <NavLink to="/mentorship">Mentorship</NavLink>
+          <NavLink to="/cooking">Cooking</NavLink>
+          <NavLink to="/blog">Blog</NavLink>
+        </nav>
+      </header>
+
+      <main>
+        <Outlet />
+      </main>
+
+      <footer>
+        <p className="contact">
+          Click on the Vite and React logos to learn more
+        </p>
+      </footer>
     </>
   );
 }
-
-export default App;

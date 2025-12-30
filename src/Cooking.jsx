@@ -47,7 +47,7 @@ function Card({ filename, hueA, hueB, name }) {
           alt={name}
           className="h-[16em] w-auto object-contain"
         />
-        <div class="[font-family:'Pacifico',cursive] text-[2em]">{name}</div>
+        <div class="[font-family:'Pacifico',cursive] text-[2em] ">{name}</div>
       </motion.div>
     </motion.div>
   );
@@ -85,17 +85,17 @@ const cards = [
 
 export default function Cooking() {
   return (
-    <div id="cooking" class="flex">
+    <div id="cooking" class="flex text-center">
       <div class="flex-column mx-auto my-[50px] max-w-[500px] pb-[100px] w-full">
-        <p class="pb-4 text-[1em]">
+        <p class="pb-4 text-[1em] ">
           As cooking is my biggest hobby, I'm glad you're here!
         </p>
-        <p class="pt-4 pb-4 text-[1em]">
+        <p class="pt-4 pb-4 text-[1em]  ">
           This page doesn't have any recipes, as I rarely create recipes.
           Rather, I love <i>mastering</i> recipes. I'm always thinking, "How can
           I make this for 80 people?" and "Can I make this in a crock pot?"
         </p>
-        <p class="pb-8 text-[1em]">
+        <p class="pb-8 text-[1em] ">
           As many of my recipes have been taught to me by family, and the many
           international friends who have become family, these dishes are from
           all over the world. I hope you enjoy! Please reach out if you want to
@@ -110,7 +110,7 @@ export default function Cooking() {
             name={name}
           />
         ))}
-        <div class="mt-[12rem] [font-family:'Pacifico',cursive] text-[3em]">
+        <div class="mt-[12rem]  [font-family:'Pacifico',cursive] text-[3em]">
           ... and more!
         </div>
       </div>

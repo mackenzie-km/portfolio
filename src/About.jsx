@@ -7,7 +7,7 @@ export default function About() {
   const ref = useRef(null);
 
   return (
-    <div ref={ref} id="about" class="flex flex-col gap-8 md:flex-row">
+    <div ref={ref} id="about" class="flex flex-col gap-8 md:flex-row mx-8">
       <div class="flex-auto items-center order-2 text-left md:order-1">
         <motion.div
           initial={{ opacity: 0.3 }}
