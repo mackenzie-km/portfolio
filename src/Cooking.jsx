@@ -47,7 +47,7 @@ function Card({ filename, hueA, hueB, name }) {
           alt={name}
           className="h-[16em] w-auto object-contain"
         />
-        <div class="[font-family:'Pacifico',cursive] text-[2em] ">{name}</div>
+        <div class="font-pacifico text-[2em] ">{name}</div>
       </motion.div>
     </motion.div>
   );
@@ -110,9 +110,7 @@ export default function Cooking() {
             name={name}
           />
         ))}
-        <div class="mt-[12rem]  [font-family:'Pacifico',cursive] text-[3em]">
-          ... and more!
-        </div>
+        <div class="mt-[12rem] font-pacifico text-[3em]">... and more!</div>
       </div>
     </div>
   );
