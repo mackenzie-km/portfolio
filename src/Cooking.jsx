@@ -28,7 +28,7 @@ function Card({ filename, hueA, hueB, name }) {
 
   return (
     <motion.div
-      class="relative flex items-center justify-center pt-[20px] pb-[40px] mb-[-40px] md:pb-[100px] md:mb-[-120px]"
+      class="relative flex items-center justify-center pt-[20px]  mb-[-40px] md:pb-[40px] md:pb-[100px] md:mb-[-120px]"
       initial="offscreen"
       whileInView="onscreen"
       viewport={{ amount: 0.8 }}
@@ -110,6 +110,9 @@ export default function Cooking() {
             name={name}
           />
         ))}
+        <div class="mt-[12rem] [font-family:'Pacifico',cursive] text-[3em]">
+          ... and more!
+        </div>
       </div>
     </div>
   );
