@@ -8,3 +8,9 @@
   --color-accent-mid: #f1caa1;
   --color-text-dark: #141414;
 }
+
+@layer components {
+  .tech-icon {
+    @apply w-6 h-6 opacity-80 transition hover:opacity-100;
+  }
+}

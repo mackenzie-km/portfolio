@@ -67,8 +67,11 @@ export default function App() {
         <Outlet />
       </main>
       <footer>
-        <p className="contact">
-          Click on the Vite and React logos to learn more
+        <p
+          id="contact"
+          class="mx-[10%] my-[2%] font-pacifico text-sm text-center"
+        >
+          Made with care in 2025. All rights reserved.
         </p>
       </footer>
     </>
