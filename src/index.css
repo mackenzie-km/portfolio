@@ -23,7 +23,7 @@
     @apply mx-[10%] my-[5%];
   }
   .tech-icon {
-    @apply w-6 h-6 opacity-80 transition hover:opacity-100;
+    @apply w-6 h-6 grayscale opacity-80 transition hover:grayscale hover:opacity-100 hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.6)];
   }
   .nav-link {
     @apply absolute left-1/2 top-full

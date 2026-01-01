@@ -1,30 +1,34 @@
 import { useRef } from "react";
 import { motion } from "motion/react";
 
-import viteLogo from "/vite.svg";
+import headshot from "./assets/about/headshot.jpeg";
 
 export default function About() {
   const ref = useRef(null);
 
   return (
-    <div ref={ref} id="about" class="flex flex-col gap-8 md:flex-row mx-8">
-      <div class="flex-auto items-center order-2 text-left md:order-1">
+    <div
+      ref={ref}
+      id="about"
+      class="flex flex-col gap-16 md:flex-row mx-[10%] my-[5%]"
+    >
+      <div class="flex-auto items-center order-2 text-left md:order-1 relative md:min-h-fit">
         <motion.div
           initial={{ opacity: 0.3 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: false, amount: 0.5 }}
           transition={{ duration: 1.5 }}
-          class="flex flex-auto justify-center text-[2rem] md:min-h-screen md:items-center md:py-[25%]"
+          class="flex flex-auto justify-center text-center text-[2rem] md:min-h-[50vh] md:items-center md:py-[25%]"
         >
-          Hi! I’m Mackenzie (but you can call me Mack). I create software that
-          helps people do their best work.
+          Hi 👋! I’m Mackenzie (but you can call me Mack). I create software
+          that helps people do their best work.
         </motion.div>
         <motion.div
           initial={{ opacity: 0.3 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: false, amount: 0.5 }}
           transition={{ duration: 1.5 }}
-          class="md:min-h-screen py-[10%] md:py-[25%] text-[2rem]"
+          class="py-[10%] md:py-[25%] text-[2rem] text-center"
         >
           I majored in Animal Science @ UC Davis and spent several years working
           in biotech. While there, I began automating my own work with Excel and
@@ -37,7 +41,7 @@ export default function About() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: false, amount: 0.5 }}
           transition={{ duration: 1.5 }}
-          class="md:min-h-screen py-[10%] md:py-[25%] text-[2rem]"
+          class="py-[10%] md:py-[25%] text-[2rem] text-center"
         >
           For me, the "who" always comes before the "what." I care deeply about
           my teammates and the people we’re building for. Tech stacks, tools,
@@ -51,23 +55,28 @@ export default function About() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: false, amount: 0.5 }}
           transition={{ duration: 1.5 }}
-          class="md:min-h-screen py-[10%] md:py-[25%] text-[2rem]"
+          class="py-[10%] md:pb-[25%] text-[2rem] text-center"
         >
           Feel free to explore my projects, writing, and more about me. Let’s
           build something together!
         </motion.div>
       </div>
       <motion.div
-        class="flex items-center md:sticky md:top-0 justify-center order-1 md:h-screen w-full md:w-full md:order-2"
+        class="flex items-start md:pt-24 md:sticky md:top-[15vh] justify-center order-1 md:h-screen w-full md:w-full md:order-2"
         animate={{ rotate: [0, 10, -5, 2, 0] }}
         transition={{ duration: 2 }}
       >
-        <img
-          class="min-h-[200px] min-w-[200px]"
-          id="profile-photo"
-          src={viteLogo}
-          alt="Profile Photo"
-        />
+        <div
+          class="relative rounded-3xl
+           shadow-[0_20px_40px_rgba(0,0,0,0.08)]   bg-gradient-to-br from-[var(--color-accent-dark)] to-[var(--color-accent-med)] opacity-100 py-8 px-8 mt-8 md:mt-0"
+        >
+          <img
+            class="min-h-[200px] min-w-[200px] max-w-[200px] max-h-[200px] md:max-w-[250px] md:max-h-[250px] rounded-3xl"
+            id="profile-photo"
+            src={headshot}
+            alt="Profile Photo"
+          />
+        </div>
       </motion.div>
     </div>
   );
