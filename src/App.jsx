@@ -23,16 +23,33 @@ export default function App() {
           rounded-full
           bg-gradient-to-r
           from-[var(--color-accent-dark)]
-          to-[var(--color-accent-mid)]
+          to-[var(--color-accent-med)]
           opacity-100
         "
             />
           </div>
           <ul className="flex gap-16 font-[var(--font-nunito)] text-[18px] text-[var(--color-text-dark)]">
-            {["Home", "Coding", "Mentorship", "Cooking", "Blog"].map((item) => (
+            <li key="home" className="relative">
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  `group relative font-medium ${
+                    isActive ? "active text-[var(--color-text-dark)]" : ""
+                  }`
+                }
+              >
+                Home
+                <span
+                  className="
+        nav-link
+      "
+                />
+              </NavLink>
+            </li>
+            {["Coding", "Mentorship", "Cooking"].map((item) => (
               <li key={item} className="relative">
                 <NavLink
-                  to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                  to={`/${item.toLowerCase()}`}
                   className={({ isActive }) =>
                     `group relative font-medium ${
                       isActive ? "active text-[var(--color-text-dark)]" : ""
@@ -43,23 +60,26 @@ export default function App() {
 
                   <span
                     className="
-        absolute left-1/2 top-full
-        mt-[16px]
-        h-[4px] w-[150%]
-        -translate-x-1/2
-        rounded-full
-        bg-gradient-to-r
-        from-[var(--color-accent-dark)]
-        to-[var(--color-accent-mid)]
-        opacity-100
-        scale-x-0
-        transition-transform duration-200 ease-out
-        group-[.active]:scale-x-100
+        nav-link
       "
                   />
                 </NavLink>
               </li>
             ))}
+            <li key="home" className="relative">
+              <NavLink
+                to="https://medium.com/@mackenzie.gonzales.k_98971"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Blog
+                <span
+                  className="
+        nav-link
+      "
+                />
+              </NavLink>
+            </li>
           </ul>
         </nav>
       </header>

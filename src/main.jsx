@@ -5,6 +5,7 @@ import App from "./App";
 import About from "./About";
 import Coding from "./Coding";
 import Cooking from "./Cooking";
+import Mentorship from "./Mentorship";
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <About /> },
       { path: "coding", element: <Coding /> },
+      { path: "mentorship", element: <Mentorship /> },
       { path: "cooking", element: <Cooking /> },
     ],
   },

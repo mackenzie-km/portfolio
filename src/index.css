@@ -1,16 +1,42 @@
 @import "tailwindcss";
 
-@theme {
+:root {
+  --color-accent-light: #f4d6b0;
+  --color-accent-med: #f1caa1;
+  --color-text-dark: #141414;
+
   --font-pacifico: "Pacifico", cursive;
   --font-nunito: "Nunito", sans-serif;
+}
 
-  --color-accent-light: #f4d6b0;
-  --color-accent-mid: #f1caa1;
-  --color-text-dark: #141414;
+@theme {
+  --color-accent-light: var(--color-accent-light);
+  --color-accent-med: var(--color-accent-med);
+  --color-text-dark: var(--color-text-dark);
+
+  --font-pacifico: var(--font-pacifico);
+  --font-nunito: var(--font-nunito);
 }
 
 @layer components {
+  .page-container {
+    @apply mx-[10%] my-[5%];
+  }
   .tech-icon {
     @apply w-6 h-6 opacity-80 transition hover:opacity-100;
+  }
+  .nav-link {
+    @apply absolute left-1/2 top-full
+        mt-[16px]
+        h-[4px] w-[150%]
+        -translate-x-1/2
+        rounded-full
+        bg-gradient-to-r
+        from-[var(--color-accent-dark)]
+        to-[var(--color-accent-med)]
+        opacity-100
+        scale-x-0
+        transition-transform duration-200 ease-out
+        group-[.active]:scale-x-100;
   }
 }

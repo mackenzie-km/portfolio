@@ -1,30 +1,13 @@
 import { motion } from "motion/react";
-import cookie from "./assets/cookie.png";
-import musubi from "./assets/musubi.png";
-import applePie from "./assets/apple-pie.png";
-import karaage from "./assets/karaage.png";
-import kabobs from "./assets/kabobs.png";
-import eggTart from "./assets/egg-tart.png";
-import okonomiyaki from "./assets/okonomiyaki.png";
-import tteokbokki from "./assets/tteokbokki.png";
-import strawberryCheesecake from "./assets/strawberry-cheesecake.png";
-import jajangmyeon from "./assets/jajangmyeon.png";
-
-const imageMap = {
-  "cookie.png": cookie,
-  "musubi.png": musubi,
-  "appie-pie.png": applePie,
-  "karaage.png": karaage,
-  "kabobs.png": kabobs,
-  "egg-tart.png": eggTart,
-  "okonomiyaki.png": okonomiyaki,
-  "tteokbokki.png": tteokbokki,
-  "strawberry-cheesecake.png": strawberryCheesecake,
-  "jajangmyeon.png": jajangmyeon,
-};
+import { imageMap } from "./constants/food-images";
 
 function Card({ filename, hueA, hueB, name }) {
-  const background = `linear-gradient(306deg, ${hue(hueA)}, ${hue(hueB)})`;
+  const background = `linear-gradient(
+  135deg,
+  ${hue(hueA, 97)},
+  ${hue(hueA, 85)} 45%,
+  ${hue(hueB, 65)}
+)`;
 
   return (
     <motion.div
@@ -47,7 +30,7 @@ function Card({ filename, hueA, hueB, name }) {
           alt={name}
           className="h-[16em] w-auto object-contain"
         />
-        <div class="font-pacifico text-[2em] ">{name}</div>
+        <div class="font-pacifico text-[2em] text-center">{name}</div>
       </motion.div>
     </motion.div>
   );
@@ -68,39 +51,39 @@ const cardVariants = {
   },
 };
 
-const hue = (h) => `hsl(${h}, 100%, 80%)`;
+const hue = (h, l) => `hsl(${h}, 85%, ${l}%)`;
 
 const cards = [
-  ["cookie.png", 34, 20, "Cookies"],
+  ["cookie.png", 34, 24, "Cookies"],
   ["musubi.png", 25, 35, "Spam Musubi"],
-  ["appie-pie.png", 45, 55, "Apple Pie"],
+  ["appie-pie.png", 45, 58, "Apple Pie"],
   ["karaage.png", 115, 135, "Karaage"],
   ["kabobs.png", 25, 45, "Beef Kabobs"],
-  ["egg-tart.png", 45, 60, "Egg Tarts"],
+  ["egg-tart.png", 45, 62, "Egg Tarts"],
   ["okonomiyaki.png", 25, 35, "Okonomiyaki"],
-  ["tteokbokki.png", 0, 10, "Tteokbokki"],
+  ["tteokbokki.png", 5, 15, "Tteokbokki"],
   ["strawberry-cheesecake.png", 300, 315, "Strawberry Cheesecake"],
-  ["jajangmyeon.png", 30, 35, "Jajangmyeon"],
+  ["jajangmyeon.png", 28, 38, "Jajangmyeon"],
 ];
 
 export default function Cooking() {
   return (
-    <div id="cooking" class="flex text-center">
-      <div class="flex-column mx-auto my-[50px] max-w-[500px] pb-[100px] w-full">
-        <p class="pb-4 text-[1em] ">
-          As cooking is my biggest hobby, I'm glad you're here!
-        </p>
-        <p class="pt-4 pb-4 text-[1em]  ">
-          This page doesn't have any recipes, as I rarely create recipes.
-          Rather, I love <i>mastering</i> recipes. I'm always thinking, "How can
-          I make this for 80 people?" and "Can I make this in a crock pot?"
-        </p>
-        <p class="pb-8 text-[1em] ">
-          As many of my recipes have been taught to me by family, and the many
-          international friends who have become family, these dishes are from
-          all over the world. I hope you enjoy! Please reach out if you want to
-          learn more about any of these dishes.
-        </p>
+    <div class="page-container">
+      <p class="text-[1em] ">
+        As cooking is my biggest hobby, I'm glad you're here!
+      </p>
+      <p class="text-[1em]  ">
+        This page doesn't have any recipes, as I rarely create recipes. Rather,
+        I love <i>mastering</i> recipes. I'm always thinking, "How can I make
+        this for 80 people?" and "Can I make this in a crock pot?"
+      </p>
+      <p class="text-[1em] ">
+        As many of my recipes have been taught to me by family, and the many
+        international friends who have become family, these dishes are from all
+        over the world. I hope you enjoy! Please reach out if you want to learn
+        more about any of these dishes.
+      </p>
+      <div class="flex-column mx-auto mb-[50px] max-w-[500px] pb-[100px] w-full">
         {cards.map(([filename, hueA, hueB, name]) => (
           <Card
             filename={filename}
@@ -110,8 +93,8 @@ export default function Cooking() {
             name={name}
           />
         ))}
-        <div class="mt-[12rem] font-pacifico text-[3em]">... and more!</div>
       </div>
+      <div class="font-pacifico text-[3em] text-center">... and more!</div>
     </div>
   );
 }

@@ -2,7 +2,7 @@ import { imageMap } from "./constants/icons";
 
 export default function Coding() {
   return (
-    <div class="mx-[10%] my-[5%]">
+    <div class="page-container">
       <p>
         Here are a few of my experience highlights. For the full, up-to-date
         version, see my living resume{" "}
