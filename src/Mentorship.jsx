@@ -70,8 +70,8 @@ export default function Mentorship() {
   });
 
   return (
-    <div class="page-container">
-      <div class="mb-[16px]">
+    <div class="page-container max-w-[1100px] mx-auto px-8 lg:px-6 py-20">
+      <div class="mb-[16px] text-left">
         <p>
           As a software engineer, I believe that everyone on a team has
           something to teach others. That’s why I make a point of organizing

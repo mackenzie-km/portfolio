@@ -68,33 +68,35 @@ const cards = [
 
 export default function Cooking() {
   return (
-    <div class="page-container">
-      <p class="text-[1em] ">
-        As cooking is my biggest hobby, I'm glad you're here!
-      </p>
-      <p class="text-[1em]  ">
-        This page doesn't have any recipes, as I rarely create recipes. Rather,
-        I love <i>mastering</i> recipes. I'm always thinking, "How can I make
-        this for 80 people?" and "Can I make this in a crock pot?"
-      </p>
-      <p class="text-[1em] ">
-        As many of my recipes have been taught to me by family, and the many
-        international friends who have become family, these dishes are from all
-        over the world. I hope you enjoy! Please reach out if you want to learn
-        more about any of these dishes.
-      </p>
-      <div class="flex-column mx-auto mb-[50px] max-w-[500px] pb-[100px] w-full">
-        {cards.map(([filename, hueA, hueB, name]) => (
-          <Card
-            filename={filename}
-            hueA={hueA}
-            hueB={hueB}
-            key={name}
-            name={name}
-          />
-        ))}
+    <div class="page-container max-w-[1100px] mx-auto px-8 lg:px-6 py-20">
+      <div class="max-w-[1100px]">
+        <p class="text-[1em] ">
+          As cooking is my biggest hobby, I'm glad you're here!
+        </p>
+        <p class="text-[1em]  ">
+          This page doesn't have any recipes, as I rarely create recipes.
+          Rather, I love <i>mastering</i> recipes. I'm always thinking, "How can
+          I make this for 80 people?" and "Can I make this in a crock pot?"
+        </p>
+        <p class="text-[1em] ">
+          As many of my recipes have been taught to me by family, and the many
+          international friends who have become family, these dishes are from
+          all over the world. I hope you enjoy! Please reach out if you want to
+          learn more about any of these dishes.
+        </p>
+        <div class="flex-column mx-auto mb-[50px] max-w-[500px] pb-[100px] w-full">
+          {cards.map(([filename, hueA, hueB, name]) => (
+            <Card
+              filename={filename}
+              hueA={hueA}
+              hueB={hueB}
+              key={name}
+              name={name}
+            />
+          ))}
+        </div>
+        <div class="font-pacifico text-[3em] text-center">... and more!</div>
       </div>
-      <div class="font-pacifico text-[3em] text-center">... and more!</div>
     </div>
   );
 }
