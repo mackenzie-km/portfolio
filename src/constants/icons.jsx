@@ -26,6 +26,7 @@ import javascript from "../assets/coding/javascript-original.svg";
 import lambda from "../assets/coding/Amazon_Lambda_architecture_logo.svg.png";
 import styledComponents from "../assets/coding/styled-components.png";
 import wdyr from "../assets/coding/WDYR-logo.jpg";
+import heroImage from "../assets/coding/hero_image.jpeg";
 
 export const imageMap = {
   google,
@@ -56,4 +57,5 @@ export const imageMap = {
   lambda,
   styledComponents,
   wdyr,
+  heroImage,
 };

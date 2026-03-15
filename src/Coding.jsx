@@ -1,463 +1,318 @@
 import { motion } from "motion/react";
 import { imageMap } from "./constants/icons";
 
+const HERO_IMAGE = imageMap.heroImage;
+
+function ExperienceCard({ title, logoText, bullets, icons, delay = 0 }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.6, delay }}
+      whileHover={{ y: -6, transition: { duration: 0.2 } }}
+      className="relative mt-8 bg-white rounded-2xl p-10 shadow-lg shadow-black/20 hover:shadow-xl hover:shadow-black/30 transition-all duration-300"
+    >
+      <div className="flex items-start justify-between gap-4 mb-4">
+        <p className="text-xl font-semibold font-[var(--font-nunito)]">
+          {title}
+        </p>
+        {logoText && (
+          <span className="shrink-0 text-xs font-semibold font-[var(--font-nunito)] px-3 py-1.5 rounded-lg bg-neutral-100 text-neutral-500 border border-neutral-200">
+            {logoText}
+          </span>
+        )}
+      </div>
+      <ul className="list-disc pl-5 space-y-1 text-neutral-700">
+        {bullets.map((b, i) => (
+          <li key={i}>{b}</li>
+        ))}
+      </ul>
+      <div className="flex flex-wrap items-center mt-5 gap-3">
+        {icons.map(({ href, src, alt }) => (
+          <a key={alt} href={href} target="_blank" rel="noopener noreferrer">
+            <img className="tech-icon" src={src} alt={alt} title={alt} />
+          </a>
+        ))}
+      </div>
+    </motion.div>
+  );
+}
+
 export default function Coding() {
   return (
-    <div class="page-container max-w-[1100px] mx-auto px-8 lg:px-6 py-20">
-      <div class="max-w-[1100px]">
-        <p class="text-center">
-          Here are a few of my experience highlights. For the full, up-to-date
-          version, see my living resume{" "}
-          <a
-            target="_"
-            href="https://drive.google.com/file/d/1rCB-4yDX2MPUPuelcwnMaLYilSQCGdpi/view?usp=sharing"
-          >
-            here
-          </a>
-          .
-        </p>
-        <motion.div
-          whileHover={{
-            x: [0, -3, 3, -3, 3, 0],
-            transition: {
-              duration: 1,
-            },
-          }}
-          class="relative mx-auto mt-8 max-w-4xl"
-        >
-          <div
-            class="absolute inset-0 translate-x-4 translate-y-4 rounded-3xl 
-          bg-gradient-to-br from-[var(--color-accent-dark)] to-[var(--color-accent-med)] opacity-100"
-          ></div>
-          <div
-            class="relative rounded-3xl bg-white p-10 
-           shadow-[0_20px_40px_rgba(0,0,0,0.08)]"
-          >
-            <p class="font-pacifico text-[1.5rem]">
-              FloQast — External Auditor View Tech Lead
-            </p>
-            <ul class="list-disc pl-5">
-              <li>
-                Enabled secure, granular auditor access by leading development
-                of FloQast’s most requested compliance feature.
-              </li>
-              <li>
-                Owned end-to-end technical execution across 110+ JIRA tickets
-                while maintaining a &lt;2% defect rate.
-              </li>
-              <li>
-                Directly supported enterprise sales and renewals by partnering
-                with Sales and Compliance after demand from 7+ major customers.
-              </li>
-              <li>
-                Recognized with the 2025 Extraordinary Contributions Award for
-                impact on the Compliance organization.
-              </li>
-            </ul>
-            <div class="flex flex-wrap items-center mt-4 gap-3">
-              <a href="https://aws.amazon.com/lambda/" target="_blank">
+    <div className="page-container">
+      {/* Page header */}
+      <div className="bg-[#f8f5f2] py-16">
+        <div className="max-w-[1100px] mx-auto px-8 lg:px-6">
+          <div className="flex flex-col md:flex-row my-12 gap-8 items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+              className="flex flex-col flex-auto gap-4"
+            >
+              <h1 className="relative inline-block w-fit text-3xl md:text-4xl font-semibold font-[var(--font-nunito)] pb-4">
+                Coding
+                <span className="absolute left-0 bottom-0 h-[4px] w-[60%] rounded-full bg-gradient-to-r from-[var(--color-accent-dark)] to-[var(--color-accent-med)]" />
+              </h1>
+              <p className="text-neutral-600 font-[var(--font-nunito)] text-[1.05rem] mt-12">
+                Here are a few of my experience highlights. For the full,
+                up-to-date version, see my living resume{" "}
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://drive.google.com/file/d/1rCB-4yDX2MPUPuelcwnMaLYilSQCGdpi/view?usp=sharing"
+                  className="font-semibold text-[var(--color-accent-dark)] underline underline-offset-2 hover:opacity-80 transition-opacity"
+                >
+                  here
+                </a>
+                . Please also take a look at my{" "}
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://medium.com/@mackenzie.gonzales.k_98971"
+                  className="font-semibold text-[var(--color-accent-dark)] underline underline-offset-2 hover:opacity-80 transition-opacity"
+                >
+                  blog
+                </a>{" "}
+                for many of my thoughts about software development.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.92 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="flex items-center justify-center shrink-0 mt-16"
+            >
+              <div className="relative rounded-3xl shadow-[0_20px_40px_rgba(0,0,0,0.08)] bg-gradient-to-br from-[var(--color-accent-dark)] to-[var(--color-accent-med)] py-2 px-2">
                 <img
-                  class="tech-icon"
-                  src={imageMap.lambda}
-                  alt="AWS Lambda"
-                  title="AWS Lambda"
+                  src={HERO_IMAGE}
+                  alt="Coding workspace"
+                  className="rounded-3xl object-cover max-w-[280px] md:max-w-[220px] max-h-[180px]"
                 />
-              </a>
-              <a
-                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-                target="_blank"
-              >
-                <img
-                  class="tech-icon"
-                  src={imageMap.javascript}
-                  alt="JavaScript"
-                  title="JavaScript"
-                />
-              </a>
-              <a href="https://nodejs.org/" target="_blank">
-                <img
-                  class="tech-icon"
-                  src={imageMap.nodejs}
-                  alt="Node.js"
-                  title="Node.js"
-                />
-              </a>
-              <a href="https://www.mongodb.com/" target="_blank">
-                <img
-                  class="tech-icon"
-                  src={imageMap.mongodb}
-                  alt="MongoDB"
-                  title="MongoDB"
-                />
-              </a>
-              <a href="https://react.dev/" target="_blank">
-                <img
-                  class="tech-icon"
-                  src={imageMap.react}
-                  alt="React"
-                  title="React"
-                />
-              </a>
-              <a href="https://redux.js.org/" target="_blank">
-                <img
-                  class="tech-icon"
-                  src={imageMap.redux}
-                  alt="Redux"
-                  title="Redux"
-                />
-              </a>
-              <a href="https://reactrouter.com/" target="_blank">
-                <img
-                  class="tech-icon"
-                  src={imageMap.reactrouter}
-                  alt="React Router"
-                  title="React Router"
-                />
-              </a>
-              <a href="https://styled-components.com/" target="_blank">
-                <img
-                  class="tech-icon"
-                  src={imageMap.styledComponents}
-                  alt="Styled Components"
-                  title="Styled Components"
-                />
-              </a>
-              <a href="https://jestjs.io/" target="_blank">
-                <img
-                  class="tech-icon"
-                  src={imageMap.jest}
-                  alt="Jest"
-                  title="Jest"
-                />
-              </a>
-              <a href="https://mochajs.org/" target="_blank">
-                <img
-                  class="tech-icon"
-                  src={imageMap.mocha}
-                  alt="Mocha"
-                  title="Mocha"
-                />
-              </a>
-              <a href="https://testing-library.com/" target="_blank">
-                <img
-                  class="tech-icon"
-                  src={imageMap.octopus}
-                  alt="Testing Library"
-                  title="Testing Library"
-                />
-              </a>
-              <a href="https://www.atlassian.com/software/jira" target="_blank">
-                <img
-                  class="tech-icon"
-                  src={imageMap.jira}
-                  alt="Jira"
-                  title="Jira"
-                />
-              </a>
-            </div>
+              </div>
+            </motion.div>
           </div>
-        </motion.div>
-        <motion.div
-          whileHover={{
-            x: [0, -3, 3, -3, 3, 0],
-            transition: {
-              duration: 1,
+        </div>
+      </div>
+
+      {/* Cards */}
+      <div className="max-w-[1100px] mx-auto px-8 lg:px-6 pt-8 pb-32">
+        <ExperienceCard
+          delay={0}
+          title="FloQast — External Auditor View Tech Lead"
+          logoText="Full Stack"
+          bullets={[
+            "Enabled secure, granular auditor access by leading development of FloQast's most requested compliance feature.",
+            "Owned end-to-end technical execution across 110+ JIRA tickets while maintaining a <2% defect rate.",
+            "Directly supported enterprise sales and renewals by partnering with Sales and Compliance after demand from 7+ major customers.",
+            "Recognized with the 2025 Extraordinary Contributions Award for impact on the Compliance organization.",
+          ]}
+          icons={[
+            {
+              href: "https://aws.amazon.com/lambda/",
+              src: imageMap.lambda,
+              alt: "AWS Lambda",
             },
-          }}
-          class="relative mx-auto mt-16 max-w-4xl"
-        >
-          <div
-            class="absolute inset-0 translate-x-4 translate-y-4 rounded-3xl 
-           bg-gradient-to-br from-[var(--color-accent-dark)] to-[var(--color-accent-med)] opacity-100"
-          ></div>
-          <div
-            class="relative rounded-3xl bg-white p-10 
-           shadow-[0_20px_40px_rgba(0,0,0,0.08)]"
-          >
-            <p class="font-pacifico text-[1.5rem]">
-              FloQast — Performance & Scalability Improvements
-            </p>
-            <ul class="list-disc pl-5">
-              <li>
-                Improved API response times by 6.5× through optimized MongoDB
-                aggregation pipelines.
-              </li>
-              <li>
-                Reduced page load times by ~2 seconds (average Lighthouse Screen
-                Index) by refactoring React components to minimize re-renders
-                and optimizing bundle delivery.
-              </li>
-            </ul>
-
-            <div class="flex flex-wrap items-center gap-3 mt-4">
-              <a href="https://www.mongodb.com/" target="_blank">
-                <img
-                  class="tech-icon"
-                  src={imageMap.mongodb}
-                  alt="MongoDB"
-                  title="MongoDB"
-                />
-              </a>
-              <a href="https://react.dev/" target="_blank">
-                <img
-                  class="tech-icon"
-                  src={imageMap.react}
-                  alt="React"
-                  title="React"
-                />
-              </a>
-              <a href="https://webpack.js.org/" target="_blank">
-                <img
-                  class="tech-icon"
-                  src={imageMap.webpack}
-                  alt="Webpack"
-                  title="Webpack"
-                />
-              </a>
-              <a
-                href="https://developer.chrome.com/docs/lighthouse/"
-                target="_blank"
-              >
-                <img
-                  class="tech-icon"
-                  src={imageMap.lighthouse}
-                  alt="Lighthouse"
-                  title="Lighthouse"
-                />
-              </a>
-              <a
-                href="https://github.com/welldone-software/why-did-you-render"
-                target="_blank"
-              >
-                <img
-                  class="tech-icon"
-                  src={imageMap.wdyr}
-                  alt="why-did-you-render"
-                  title="why-did-you-render"
-                />
-              </a>
-            </div>
-          </div>
-        </motion.div>
-
-        <motion.div
-          whileHover={{
-            x: [0, -3, 3, -3, 3, 0],
-            transition: {
-              duration: 1,
+            {
+              href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+              src: imageMap.javascript,
+              alt: "JavaScript",
             },
-          }}
-          class="relative mx-auto mt-8 max-w-4xl"
-        >
-          <div
-            class="absolute inset-0 translate-x-4 translate-y-4 rounded-3xl 
-            bg-gradient-to-br from-[var(--color-accent-dark)] to-[var(--color-accent-med)] opacity-100"
-          ></div>
-          <div
-            class="relative rounded-3xl bg-white p-10 
-           shadow-[0_20px_40px_rgba(0,0,0,0.08)]"
-          >
-            <p class="font-pacifico text-[1.5rem]">RSS — Inspect</p>
-            <ul class="list-disc pl-5">
-              <li>
-                Worked closely with a cross-functional team to deliver a full
-                rewrite of Inspect, a mobile and web platform used by the
-                California Department of Public Health and other government
-                agencies, modernizing compliance workflows and significantly
-                reducing reliance on manual, paper-based inspections.
-              </li>
-              <li>
-                Project awarded the University of California Office of the
-                President STAR Award.
-              </li>
-            </ul>
-
-            <div class="flex flex-wrap items-center gap-3 mt-4">
-              <a href="https://react.dev/" target="_blank">
-                <img
-                  class="tech-icon"
-                  src={imageMap.react}
-                  alt="React"
-                  title="React"
-                />
-              </a>
-              <a href="https://mui.com/" target="_blank">
-                <img
-                  class="tech-icon"
-                  src={imageMap.materialui}
-                  alt="Material UI"
-                  title="Material UI"
-                />
-              </a>
-              <a href="https://tailwindcss.com/" target="_blank">
-                <img
-                  class="tech-icon"
-                  src={imageMap.tailwind}
-                  alt="Tailwind CSS"
-                  title="Tailwind CSS"
-                />
-              </a>
-              <a href="https://nodejs.org/" target="_blank">
-                <img
-                  class="tech-icon"
-                  src={imageMap.nodejs}
-                  alt="Node.js"
-                  title="Node.js"
-                />
-              </a>
-              <a href="https://expressjs.com/" target="_blank">
-                <img
-                  class="tech-icon"
-                  src={imageMap.express}
-                  alt="Express"
-                  title="Express"
-                />
-              </a>
-              <a href="https://graphql.org/" target="_blank">
-                <img
-                  class="tech-icon"
-                  src={imageMap.graphql}
-                  alt="GraphQL"
-                  title="GraphQL"
-                />
-              </a>
-              <a href="https://www.mongodb.com/" target="_blank">
-                <img
-                  class="tech-icon"
-                  src={imageMap.mongodb}
-                  alt="MongoDB"
-                  title="MongoDB"
-                />
-              </a>
-              <a href="https://www.elastic.co/elasticsearch/" target="_blank">
-                <img
-                  class="tech-icon"
-                  src={imageMap.elasticsearch}
-                  alt="Elasticsearch"
-                  title="Elasticsearch"
-                />
-              </a>
-              <a href="https://kubernetes.io/" target="_blank">
-                <img
-                  class="tech-icon"
-                  src={imageMap.kubernetes}
-                  alt="Kubernetes"
-                  title="Kubernetes"
-                />
-              </a>
-              <a href="https://kafka.apache.org/" target="_blank">
-                <img
-                  class="tech-icon"
-                  src={imageMap.kafka}
-                  alt="Kafka"
-                  title="Kafka"
-                />
-              </a>
-              <a href="https://jestjs.io/" target="_blank">
-                <img
-                  class="tech-icon"
-                  src={imageMap.jest}
-                  alt="Jest"
-                  title="Jest"
-                />
-              </a>
-            </div>
-          </div>
-        </motion.div>
-        <motion.div
-          whileHover={{
-            x: [0, -3, 3, -3, 3, 0],
-            transition: {
-              duration: 1,
+            {
+              href: "https://nodejs.org/",
+              src: imageMap.nodejs,
+              alt: "Node.js",
             },
-          }}
-          class="relative mx-auto mt-8 max-w-4xl"
-        >
-          <div
-            class="absolute inset-0 translate-x-4 translate-y-4 rounded-3xl 
-            bg-gradient-to-br from-[var(--color-accent-dark)] to-[var(--color-accent-med)] opacity-100"
-          ></div>
-          <div
-            class="relative rounded-3xl bg-white p-10 
-           shadow-[0_20px_40px_rgba(0,0,0,0.08)]"
-          >
-            <p class="font-pacifico text-[1.5rem]">
-              Personal Project — Sheets to Cal
-            </p>
-            <ul class="list-disc pl-5">
-              <li>
-                Improved visibility and reliability of users’ personal calendars
-                through a CLI that syncs live Google Sheets data to Google
-                Calendar.
-              </li>
-              <li>
-                Built idempotent, “set-and-forget” synchronization logic using a
-                background launchd job to ensure consistent updates.
-              </li>
-            </ul>
+            {
+              href: "https://www.mongodb.com/",
+              src: imageMap.mongodb,
+              alt: "MongoDB",
+            },
+            { href: "https://react.dev/", src: imageMap.react, alt: "React" },
+            {
+              href: "https://redux.js.org/",
+              src: imageMap.redux,
+              alt: "Redux",
+            },
+            {
+              href: "https://reactrouter.com/",
+              src: imageMap.reactrouter,
+              alt: "React Router",
+            },
+            {
+              href: "https://styled-components.com/",
+              src: imageMap.styledComponents,
+              alt: "Styled Components",
+            },
+            { href: "https://jestjs.io/", src: imageMap.jest, alt: "Jest" },
+            { href: "https://mochajs.org/", src: imageMap.mocha, alt: "Mocha" },
+            {
+              href: "https://testing-library.com/",
+              src: imageMap.octopus,
+              alt: "Testing Library",
+            },
+            {
+              href: "https://www.atlassian.com/software/jira",
+              src: imageMap.jira,
+              alt: "Jira",
+            },
+          ]}
+        />
 
-            <p>Personal Project — Nametag (Archived)</p>
-            <ul class="list-disc pl-5">
-              <li>
-                Rails MVC application for efficient event attendance and contact
-                information tracking for a nonprofit organization.
-              </li>
-              <li>Implemented Google OAuth authentication for ease of use.</li>
-              <li>Used by 30+ unique users prior to sunset.</li>
-            </ul>
+        <ExperienceCard
+          delay={0.1}
+          title="FloQast — Performance & Scalability Improvements"
+          logoText="Full Stack"
+          bullets={[
+            "Improved API response times by 6.5× through optimized MongoDB aggregation pipelines.",
+            "Reduced page load times by ~2 seconds (average Lighthouse Screen Index) by refactoring React components to minimize re-renders and optimizing bundle delivery.",
+          ]}
+          icons={[
+            {
+              href: "https://www.mongodb.com/",
+              src: imageMap.mongodb,
+              alt: "MongoDB",
+            },
+            { href: "https://react.dev/", src: imageMap.react, alt: "React" },
+            {
+              href: "https://webpack.js.org/",
+              src: imageMap.webpack,
+              alt: "Webpack",
+            },
+            {
+              href: "https://developer.chrome.com/docs/lighthouse/",
+              src: imageMap.lighthouse,
+              alt: "Lighthouse",
+            },
+            {
+              href: "https://github.com/welldone-software/why-did-you-render",
+              src: imageMap.wdyr,
+              alt: "why-did-you-render",
+            },
+          ]}
+        />
 
-            <div class="flex flex-wrap items-center gap-3 mt-4">
-              <a href="https://rubyonrails.org/" target="_blank">
-                <img
-                  class="tech-icon"
-                  src={imageMap.ruby}
-                  alt="Ruby on Rails"
-                  title="Ruby on Rails"
-                />
-              </a>
-              <a href="https://jquery.com/" target="_blank">
-                <img
-                  class="tech-icon"
-                  src={imageMap.jquery}
-                  alt="jQuery"
-                  title="jQuery"
-                />
-              </a>
-              <a href="https://getbootstrap.com/" target="_blank">
-                <img
-                  class="tech-icon"
-                  src={imageMap.bootstrap}
-                  alt="Bootstrap"
-                  title="Bootstrap"
-                />
-              </a>
-              <a href="https://www.postgresql.org/" target="_blank">
-                <img
-                  class="tech-icon"
-                  src={imageMap.postgresql}
-                  alt="PostgreSQL"
-                  title="PostgreSQL"
-                />
-              </a>
-              <a href="https://www.heroku.com/" target="_blank">
-                <img
-                  class="tech-icon"
-                  src={imageMap.heroku}
-                  alt="Heroku"
-                  title="Heroku"
-                />
-              </a>
-              <a href="https://developers.google.com/identity" target="_blank">
-                <img
-                  class="tech-icon"
-                  src={imageMap.google}
-                  alt="Google OAuth"
-                  title="Google OAuth"
-                />
-              </a>
-            </div>
-          </div>
-        </motion.div>
+        <ExperienceCard
+          delay={0.2}
+          title="RSS — Inspect"
+          logoText="Full Stack"
+          bullets={[
+            "Worked closely with a cross-functional team to deliver a full rewrite of Inspect, a mobile and web platform used by the California Department of Public Health and other government agencies, modernizing compliance workflows and significantly reducing reliance on manual, paper-based inspections.",
+            "Project awarded the University of California Office of the President STAR Award.",
+          ]}
+          icons={[
+            { href: "https://react.dev/", src: imageMap.react, alt: "React" },
+            {
+              href: "https://mui.com/",
+              src: imageMap.materialui,
+              alt: "Material UI",
+            },
+            {
+              href: "https://tailwindcss.com/",
+              src: imageMap.tailwind,
+              alt: "Tailwind CSS",
+            },
+            {
+              href: "https://nodejs.org/",
+              src: imageMap.nodejs,
+              alt: "Node.js",
+            },
+            {
+              href: "https://expressjs.com/",
+              src: imageMap.express,
+              alt: "Express",
+            },
+            {
+              href: "https://graphql.org/",
+              src: imageMap.graphql,
+              alt: "GraphQL",
+            },
+            {
+              href: "https://www.mongodb.com/",
+              src: imageMap.mongodb,
+              alt: "MongoDB",
+            },
+            {
+              href: "https://www.elastic.co/elasticsearch/",
+              src: imageMap.elasticsearch,
+              alt: "Elasticsearch",
+            },
+            {
+              href: "https://kubernetes.io/",
+              src: imageMap.kubernetes,
+              alt: "Kubernetes",
+            },
+            {
+              href: "https://kafka.apache.org/",
+              src: imageMap.kafka,
+              alt: "Kafka",
+            },
+            { href: "https://jestjs.io/", src: imageMap.jest, alt: "Jest" },
+          ]}
+        />
+
+        <ExperienceCard
+          delay={0.3}
+          title="Personal Project — Sheets to Cal"
+          logoText="Full Stack"
+          bullets={[
+            "Improved visibility and reliability of users' personal calendars through a CLI that syncs live Google Sheets data to Google Calendar.",
+            'Built idempotent, "set-and-forget" synchronization logic using a background launchd job to ensure consistent updates.',
+          ]}
+          icons={[
+            {
+              href: "https://developers.google.com/identity",
+              src: imageMap.google,
+              alt: "Google OAuth",
+            },
+          ]}
+        />
+
+        <ExperienceCard
+          delay={0.4}
+          title="Personal Project — Nametag (Archived)"
+          logoText="Full Stack"
+          bullets={[
+            "Rails MVC application for efficient event attendance and contact information tracking for a nonprofit organization.",
+            "Implemented Google OAuth authentication for ease of use.",
+            "Used by 30+ unique users prior to sunset.",
+          ]}
+          icons={[
+            {
+              href: "https://rubyonrails.org/",
+              src: imageMap.ruby,
+              alt: "Ruby on Rails",
+            },
+            {
+              href: "https://jquery.com/",
+              src: imageMap.jquery,
+              alt: "jQuery",
+            },
+            {
+              href: "https://getbootstrap.com/",
+              src: imageMap.bootstrap,
+              alt: "Bootstrap",
+            },
+            {
+              href: "https://www.postgresql.org/",
+              src: imageMap.postgresql,
+              alt: "PostgreSQL",
+            },
+            {
+              href: "https://www.heroku.com/",
+              src: imageMap.heroku,
+              alt: "Heroku",
+            },
+            {
+              href: "https://developers.google.com/identity",
+              src: imageMap.google,
+              alt: "Google OAuth",
+            },
+          ]}
+        />
       </div>
     </div>
   );
