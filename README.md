@@ -1,16 +1,33 @@
-# React + Vite
+# Mackenzie's Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+This repository houses my personal portfolio website.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+I created a website about myself in order to:
 
-## React Compiler
+1. Refresh my knowledge in Tailwind, HTML/CSS, and AI (Claude Code)
+2. Showcase my projects, personality, and hobbies in a fun way
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+I hope you enjoy!
 
-## Expanding the ESLint configuration
+## Domains
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+My website is live on the following domains:
+
+- [https://mackenziekg.com](mackenziekg.com)
+- [https://mackenziekg.dev](mackenziekg.dev)
+- [https://mackenziekg.vercel.app/](https://mackenziekg.vercel.app/)
+
+## Architecture
+
+This project is a React + Vite app, deployed on Vercel.
+It utilizes Framer Motion and Tailwind to avoid CSS chaos.
+
+## Coming Soon
+
+In the near future, I would like to make the following updates:
+
+- Mobile: Add in mobile responsiveness
+- Content: Update with new projects and photos
+- Refactoring: Use more standardized components and css classes
