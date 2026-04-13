@@ -1,5 +1,5 @@
 import parallax1 from "../assets/mentorship/parallax-1.jpg";
-import parallax2 from "../assets/mentorship/parallax-2.jpg";
+import parallax2 from "../assets/mentorship/parallax-2.jpeg";
 import parallax3 from "../assets/mentorship/parallax-3.png";
 import parallax4 from "../assets/mentorship/parallax-4.png";
 import parallax5 from "../assets/mentorship/parallax-5.jpg";
