@@ -107,7 +107,14 @@ export default function About() {
             </p>
             <p class="mt-8 max-w-3xl mx-auto text-[1.05rem] leading-relaxed text-neutral-700 font-[var(--font-nunito)]">
               Feel free to explore my projects, writing, and more about me.
-              Let's build something together!
+              Let's build something together — reach out at{" "}
+              <a
+                href="mailto:mackenzie.gonzales.k@gmail.com"
+                className="text-[var(--color-accent-dark)] hover:underline font-medium"
+              >
+                mackenzie.gonzales.k@gmail.com
+              </a>
+              !
             </p>
           </motion.div>
         </div>
