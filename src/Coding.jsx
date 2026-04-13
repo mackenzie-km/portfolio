@@ -105,10 +105,10 @@ export default function Coding() {
           title="FloQast — External Auditor View Tech Lead"
           logoText="Full Stack"
           bullets={[
-            "Enabled secure, granular auditor access by leading development of FloQast's most requested compliance feature.",
-            "Owned end-to-end technical execution across 110+ JIRA tickets while maintaining a <2% defect rate.",
-            "Directly supported enterprise sales and renewals by partnering with Sales and Compliance after demand from 7+ major customers.",
-            "Recognized with the 2025 Extraordinary Contributions Award for impact on the Compliance organization.",
+            "Enabled secure, granular auditor access by leading development of FloQast's most requested compliance feature",
+            "Owned end-to-end technical execution across 110+ JIRA tickets while maintaining a <2% defect rate",
+            "Directly supported enterprise sales and renewals by partnering with Sales and Compliance after demand from 7+ major customers",
+            "Recognized with the 2025 Extraordinary Contributions Award for impact on the Compliance organization",
           ]}
           icons={[
             {
@@ -167,8 +167,8 @@ export default function Coding() {
           title="FloQast — Performance & Scalability Improvements"
           logoText="Full Stack"
           bullets={[
-            "Improved API response times by 6.5× through optimized MongoDB aggregation pipelines.",
-            "Reduced page load times by ~2 seconds (average Lighthouse Screen Index) by refactoring React components to minimize re-renders and optimizing bundle delivery.",
+            "Improved API response times by 6.5× through optimized MongoDB aggregation pipelines",
+            "Reduced page load times by ~2 seconds (average Lighthouse Screen Index) by refactoring React components to minimize re-renders and optimizing bundle delivery",
           ]}
           icons={[
             {
@@ -197,11 +197,88 @@ export default function Coding() {
 
         <ExperienceCard
           delay={0.2}
+          title="Personal Project — Tag & Sync"
+          logoText="Full Stack"
+          bullets={[
+            <>
+              Built an automated pipeline that syncs photos from Google Drive to
+              Google Photos, using Gemini AI to generate and attach searchable
+              descriptions to each image — live at{" "}
+              <a
+                href="https://sync.mackenziekg.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-[var(--color-accent-dark)] underline underline-offset-2 hover:opacity-80 transition-opacity"
+              >
+                sync.mackenziekg.dev
+              </a>
+            </>,
+            <>
+              Designed a{" "}
+              <a
+                href="https://github.com/mackenzie-km/drive-photos-sync/blob/main/README.md"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-[var(--color-accent-dark)] underline underline-offset-2 hover:opacity-80 transition-opacity"
+              >
+                streaming upload architecture
+              </a>{" "}
+              to transfer files directly between APIs without buffering in
+              memory, supporting libraries of 10,000+ photos
+            </>,
+            "Implemented background sync with per-file status tracking, retry logic, and duplicate detection via MD5 checksums",
+          ]}
+          icons={[
+            {
+              href: "https://developers.google.com/identity",
+              src: imageMap.google,
+              alt: "Google OAuth",
+            },
+            {
+              href: "https://developers.google.com/drive",
+              src: imageMap.googleDrive,
+              alt: "Google Drive API",
+            },
+            {
+              href: "https://developers.google.com/photos",
+              src: imageMap.googlePhotos,
+              alt: "Google Photos API",
+            },
+            {
+              href: "https://deepmind.google/technologies/gemini/",
+              src: imageMap.googleGemini,
+              alt: "Gemini AI",
+            },
+            {
+              href: "https://nodejs.org/",
+              src: imageMap.nodejs,
+              alt: "Node.js",
+            },
+            {
+              href: "https://www.typescriptlang.org/",
+              src: imageMap.typescript,
+              alt: "TypeScript",
+            },
+            {
+              href: "https://expressjs.com/",
+              src: imageMap.express,
+              alt: "Express",
+            },
+            {
+              href: "https://www.postgresql.org/",
+              src: imageMap.postgresql,
+              alt: "PostgreSQL",
+            },
+          ]}
+        />
+
+        <ExperienceCard
+          delay={0.3}
           title="RSS — Inspect"
           logoText="Full Stack"
           bullets={[
-            "Worked closely with a cross-functional team to deliver a full rewrite of Inspect, a mobile and web platform used by the California Department of Public Health and other government agencies, modernizing compliance workflows and significantly reducing reliance on manual, paper-based inspections.",
-            "Project awarded the University of California Office of the President STAR Award.",
+            "Led a full rewrite of Inspect, a mobile and web compliance platform used by the California Department of Public Health and other government agencies",
+            "Project awarded the University of California Office of the President STAR Award",
           ]}
           icons={[
             { href: "https://react.dev/", src: imageMap.react, alt: "React" },
@@ -255,30 +332,13 @@ export default function Coding() {
         />
 
         <ExperienceCard
-          delay={0.3}
-          title="Personal Project — Sheets to Cal"
-          logoText="Full Stack"
-          bullets={[
-            "Improved visibility and reliability of users' personal calendars through a CLI that syncs live Google Sheets data to Google Calendar.",
-            'Built idempotent, "set-and-forget" synchronization logic using a background launchd job to ensure consistent updates.',
-          ]}
-          icons={[
-            {
-              href: "https://developers.google.com/identity",
-              src: imageMap.google,
-              alt: "Google OAuth",
-            },
-          ]}
-        />
-
-        <ExperienceCard
           delay={0.4}
-          title="Personal Project — Nametag (Archived)"
+          title="Personal Project — Nametag (prior to sunset)"
           logoText="Full Stack"
           bullets={[
-            "Rails MVC application for efficient event attendance and contact information tracking for a nonprofit organization.",
-            "Implemented Google OAuth authentication for ease of use.",
-            "Used by 30+ unique users prior to sunset.",
+            "Rails MVC application for efficient event attendance and contact information tracking for a nonprofit organization",
+            "Implemented Google OAuth authentication for ease of use",
+            "Used by 30+ unique users prior to sunset",
           ]}
           icons={[
             {

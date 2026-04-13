@@ -27,6 +27,10 @@ import lambda from "../assets/coding/Amazon_Lambda_architecture_logo.svg.png";
 import styledComponents from "../assets/coding/styled-components.png";
 import wdyr from "../assets/coding/WDYR-logo.jpg";
 import heroImage from "../assets/coding/hero_image.jpeg";
+import googleDrive from "../assets/coding/google-drive.png";
+import googleGemini from "../assets/coding/Google-gemini-icon.png";
+import googlePhotos from "../assets/coding/google-photos.png";
+import typescript from "../assets/coding/typescript.png";
 
 export const imageMap = {
   google,
@@ -58,4 +62,8 @@ export const imageMap = {
   styledComponents,
   wdyr,
   heroImage,
+  googleDrive,
+  googleGemini,
+  googlePhotos,
+  typescript,
 };
