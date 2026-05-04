@@ -201,9 +201,9 @@ export default function Coding() {
           logoText="Full Stack"
           bullets={[
             <>
-              Built an automated pipeline that syncs photos from Google Drive to
-              Google Photos, using Gemini AI to generate and attach searchable
-              descriptions to each image — live at{" "}
+              Built a web app that uses Google Gemini to generate searchable AI
+              captions for Google Drive photos, then syncs them to Google Photos
+              — live at{" "}
               <a
                 href="https://sync.mackenziekg.dev"
                 target="_blank"
@@ -213,20 +213,8 @@ export default function Coding() {
                 sync.mackenziekg.dev
               </a>
             </>,
-            <>
-              Designed a{" "}
-              <a
-                href="https://github.com/mackenzie-km/drive-photos-sync/blob/main/README.md"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold text-[var(--color-accent-dark)] underline underline-offset-2 hover:opacity-80 transition-opacity"
-              >
-                streaming upload architecture
-              </a>{" "}
-              to transfer files directly between APIs without buffering in
-              memory, supporting libraries of 10,000+ photos
-            </>,
-            "Implemented background sync with per-file status tracking, retry logic, and duplicate detection via MD5 checksums",
+            "Designed resumable, idempotent sync backed by Postgres: per-file status tracking, retry logic (up to 3 attempts), and duplicate detection via MD5 checksums",
+            "Supports batch syncing of up to 10,000 photos with AI captioning, or unlimited without; syncs can be aborted mid-run and resumed from where they left off",
           ]}
           icons={[
             {
@@ -249,6 +237,7 @@ export default function Coding() {
               src: imageMap.googleGemini,
               alt: "Gemini AI",
             },
+            { href: "https://react.dev/", src: imageMap.react, alt: "React" },
             {
               href: "https://nodejs.org/",
               src: imageMap.nodejs,
