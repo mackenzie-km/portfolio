@@ -214,7 +214,8 @@ export default function Coding() {
               </a>
             </>,
             "Designed resumable, idempotent sync backed by Postgres: per-file status tracking, retry logic (up to 3 attempts), and duplicate detection via MD5 checksums",
-            "Supports batch syncing of up to 10,000 photos with AI captioning, or unlimited without; syncs can be aborted mid-run and resumed from where they left off",
+            "Supports batch syncing of up to 10,000 photos with AI captioning, or 20,000 without; syncs can be aborted mid-run and resumed from where they left off",
+            "Streams live sync progress to the browser over Server-Sent Events instead of polling, with a resilient reconnect flow that always resyncs to a fresh snapshot from Postgres",
           ]}
           icons={[
             {
